@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bouazzaoui/TodoApi/TodoApi.csproj": {}
+    "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/TodoApi.csproj": {}
   },
   "projects": {
-    "/home/bouazzaoui/TodoApi/TodoApi.csproj": {
+    "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bouazzaoui/TodoApi/TodoApi.csproj",
+        "projectUniqueName": "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "/home/bouazzaoui/TodoApi/TodoApi.csproj",
+        "projectPath": "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/TodoApi.csproj",
         "packagesPath": "/home/bouazzaoui/.nuget/packages/",
-        "outputPath": "/home/bouazzaoui/TodoApi/obj/",
+        "outputPath": "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bouazzaoui/.nuget/NuGet/NuGet.Config"
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/bouazzaoui/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
         }
       }
     }
