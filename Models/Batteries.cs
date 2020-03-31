@@ -2,18 +2,16 @@ using System;
 using System.Collections.Generic;
 
 namespace TodoApi.Models {
-    public partial class Batteries {
+    public class batteries {
         
 
-        public long Id { get; set; }
-        // public long? BuildingId { get; set; }
-        // public string BuildingType { get; set; }
+        public long id { get; set; }
         public string Status { get; set; }
         public string  battery_type { get; set; }
         public DateTime  date_commision { get; set; }
         public DateTime date_last_inspect { get; set; }
         
-        // public long? EmployeeId { get; set; }
+        // public long EmployeeId { get; set; }
         // public DateTime? InServiceSince { get; set; }
         // public DateTime? LastInspection { get; set; }
         // public string OperationsCertificate { get; set; }
