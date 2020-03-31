@@ -9,18 +9,18 @@ namespace TodoApi.Models {
     //     }
 
         public long Id { get; set; }
-        public string full_name { get; set; }
-        public string company_name { get; set; }
-         public string email { get; set; }
-        public string phone { get; set; }
-         public string project_name { get; set; }
-         public string project_desc { get; set; }
+        public string Full_name { get; set; }
+        public string Company_name { get; set; }
+         public string Email { get; set; }
+        public string Phone { get; set; }
+         public string Project_name { get; set; }
+         public string Project_desc { get; set; }
         public string Department { get; set; }
         public string Message { get; set; }
         [JsonIgnore]
-           public byte[] attached_file { get; set; }
-           public DateTime created_at { get; set; }
-            public DateTime updated_at { get; set; }
+           public byte[] Attached_file { get; set; }
+           public DateTime Created_at { get; set; }
+            public DateTime Updated_at { get; set; }
             // public string OriginalFileName { get; set; }
         // [JsonIgnore]
         // public ICollection<Customers> Customers { get; set; }
