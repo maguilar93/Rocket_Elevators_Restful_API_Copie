@@ -22,7 +22,7 @@ namespace TodoApi
             {
                 services.AddCors();
 
-                services.AddDbContext<TodoContext>(options =>
+                services.AddDbContext<MysqlContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddMvc();
