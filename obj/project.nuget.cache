@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aPbGsixF5Gg2ypm4brJuI3DUNwc/gY+mp1y9GADpkYdQU4WgDtCEFcdvUSpY3WS42xyQCjhGOHa0/fw+U6tXQA==",
+  "dgSpecHash": "cM7F4a8RUCQ7nOZPKIyvm7BfPcn5U/ndNhmQUVD1GNf1eNVa2RSzs4xeB+9kmVX5ruId20iDPlBnxCswkYh2Gw==",
   "success": true,
   "projectFilePath": "/home/bouazzaoui/CodeBoox/week8/Rocket_Elevators_Restful_API_Copie/TodoApi.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,7 @@
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
-    "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.jsonpatch/2.2.0/microsoft.aspnetcore.jsonpatch.2.2.0.nupkg.sha512",
+    "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.3/microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.localization/2.2.0/microsoft.aspnetcore.localization.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc/2.2.0/microsoft.aspnetcore.mvc.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.abstractions/2.2.0/microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
@@ -32,6 +32,7 @@
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.dataannotations/2.2.0/microsoft.aspnetcore.mvc.dataannotations.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.formatters.json/2.2.0/microsoft.aspnetcore.mvc.formatters.json.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.localization/2.2.0/microsoft.aspnetcore.mvc.localization.2.2.0.nupkg.sha512",
+    "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3/microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.razor/2.2.0/microsoft.aspnetcore.mvc.razor.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.razor.extensions/2.2.0/microsoft.aspnetcore.mvc.razor.extensions.2.2.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/microsoft.aspnetcore.mvc.razorpages/2.2.0/microsoft.aspnetcore.mvc.razorpages.2.2.0.nupkg.sha512",
@@ -104,7 +105,7 @@
     "/home/bouazzaoui/.nuget/packages/mysqlconnector/0.61.0/mysqlconnector.0.61.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
-    "/home/bouazzaoui/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "/home/bouazzaoui/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/nuget.frameworks/4.7.0/nuget.frameworks.4.7.0.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/pomelo.entityframeworkcore.mysql/3.1.1/pomelo.entityframeworkcore.mysql.3.1.1.nupkg.sha512",
     "/home/bouazzaoui/.nuget/packages/pomelo.jsonobject/2.2.1/pomelo.jsonobject.2.2.1.nupkg.sha512",

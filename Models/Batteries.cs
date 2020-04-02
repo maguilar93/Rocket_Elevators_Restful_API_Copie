@@ -20,12 +20,12 @@ namespace TodoApi.Models {
         // public string OperationsCertificate { get; set; }
         // public string Information { get; set; }
         // public string Notes { get; set; }
-        public long? employee_id { get; set; }
+        // public long? employee_id { get; set; }
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }
 
          public buildings building { get; set; }
-         public employees employee { get; set; }
+        //  public employees employee { get; set; }
         public ICollection<columns> columns { get; set; }
     }
 }

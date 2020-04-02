@@ -32,8 +32,8 @@ namespace TodoApi.Models
                 entity.HasIndex (e => e.building_id)
                     .HasName ("index_batteries_on_building_id");
 
-                entity.HasIndex (e => e.employee_id)
-                   .HasName ("index_batteries_on_employee_id");
+                // entity.HasIndex (e => e.employee_id)
+                //    .HasName ("index_batteries_on_employee_id");
 
                 entity.Property (e => e.id)
                     .HasColumnName ("id")
@@ -133,19 +133,19 @@ namespace TodoApi.Models
             modelBuilder.Entity<buildings> (entity => {
                 entity.ToTable ("buildings");
 
-                entity.HasIndex (e => e.address_id)
-                    .HasName ("index_building_on_address_id");
+                // entity.HasIndex (e => e.address_id)
+                //     .HasName ("index_building_on_address_id");
 
-                entity.HasIndex (e => e.customer_id)
-                    .HasName ("index_building_on_customer_id");
+                // entity.HasIndex (e => e.customer_id)
+                //     .HasName ("index_building_on_customer_id");
 
                 entity.Property (e => e.id)
                     .HasColumnName ("id")
                     .HasColumnType ("bigint(20)");
 
-                entity.Property (e => e.address_id)
-                    .HasColumnName ("address_id")
-                    .HasColumnType ("bigint(20)");
+                // entity.Property (e => e.address_id)
+                //     .HasColumnName ("address_id")
+                //     .HasColumnType ("bigint(20)");
 
                 // entity.Property (e => e.administrator_email)
                 //     .HasColumnName ("administrator_email")

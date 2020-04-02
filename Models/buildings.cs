@@ -20,10 +20,10 @@ namespace TodoApi.Models
         public string tech_full_name { get; set; }
         public string tech_email { get; set; }
         public string tech_phone { get; set; }
-        public int customer_id { get; set; }
-        public int address_id { get; set; }
-        public addresses address { get; set; }
-        public customers customer { get; set; }
+        // public int customer_id { get; set; }
+        // public int address_id { get; set; }
+        // public addresses address { get; set; }
+        // public customers customer { get; set; }
         [JsonIgnore]
         public ICollection<batteries> batteries { get; set; }
         public ICollection<building_details> building_details { get; set; }
