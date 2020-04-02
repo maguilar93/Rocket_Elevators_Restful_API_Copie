@@ -26,7 +26,7 @@ namespace Rocket.Controllers {
                 return NotFound ("Not found");
             }
            var json = new JObject ();
-            json["status"] = item.Status;
+            json["status"] = item.status;
             return Content (json.ToString (), "application/json");
         }
 
@@ -38,7 +38,7 @@ namespace Rocket.Controllers {
                 return NotFound ();
             }
 
-            bat.Status = battery.Status;
+            bat.status = battery.status;
 
             _context.batteries.Update (bat);
             _context.SaveChanges ();

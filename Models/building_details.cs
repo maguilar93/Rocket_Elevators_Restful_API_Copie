@@ -11,5 +11,6 @@ namespace TodoApi.Models
         public string info_key { get; set; }
         public string value { get; set; }
         public long building_id { get; set; }
+        public buildings building { get; set; }
     }
 }

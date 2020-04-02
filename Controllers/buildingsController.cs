@@ -11,8 +11,7 @@ namespace TodoApi.Controllers
 {
     [Route("api/buildings")]
     [ApiController]
-    public class buildingsController : Controllerbase
-    {
+    public class buildingsController : ControllerBase{
         private readonly MysqlContext _context;
 
         public buildingsController(MysqlContext context)
@@ -25,7 +24,7 @@ namespace TodoApi.Controllers
         public ActionResult<List<buildings>> GetAll () {
             var list = _context.buildings
                 .Include (bu => bu.batteries)
-                .ThenInclude (b => b.Columns)
+                .ThenInclude (b => b.columns)
                 .ThenInclude (c => c.elevators);
 
             if (list == null) {
@@ -42,7 +41,7 @@ namespace TodoApi.Controllers
                     if (battery.status == "Intervention") {
                         verification = true;
                     }
-                    foreach (var column in battery.Columns) {
+                    foreach (var column in battery.columns) {
                         if (column.status == "Intervention") {
                             verification = true;
                         }
@@ -55,7 +54,7 @@ namespace TodoApi.Controllers
                     }
                 }
                 if (verification == true) {
-                    var found_building = _context.buildings.Find (building.Id);
+                    var found_building = _context.buildings.Find (building.id);
                     list_buildings_intervention.Add (found_building);
                 }
             }
