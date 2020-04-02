@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
+using Newtonsoft.Json.Linq;
 
 namespace TodoApi.Controllers
 {
@@ -20,25 +21,23 @@ namespace TodoApi.Controllers
             _context = context;
         }
 
-        // GET: api/columns
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<columns>>> Getcolumns()
-        {
-            return await _context.columns.ToListAsync();
-        }
+       
+        
 
         // GET: api/columns/5
         [HttpGet("{id}")]
         public async Task<ActionResult<columns>> Getcolumns(long id)
         {
-            var columns = await _context.columns.FindAsync(id);
+            var columns =  _context.columns.Find(id);
 
             if (columns == null)
             {
                 return NotFound();
             }
-
-            return columns;
+             var json = new JObject ();
+            json["status"] = columns.status;
+            return Content (json.ToString (), "application/json");
+            return  Content (json.ToString (), "application/json"); ;
         }
 
         // PUT: api/columns/5
@@ -47,63 +46,21 @@ namespace TodoApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Putcolumns(long id, columns columns)
         {
-            if (id != columns.id)
-            {
-                return BadRequest();
+            var bat = _context.columns.Find (id);
+            if (bat == null) {
+                return NotFound ();
             }
 
-            _context.Entry(columns).State = EntityState.Modified;
+            bat.status = columns.status;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!columnsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _context.columns.Update (bat);
+            _context.SaveChanges ();
+             var json = new JObject ();
+            json["message"] = "the change of status is well done";
+            return Content (json.ToString (), "application/json");
         }
 
-        // POST: api/columns
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<columns>> Postcolumns(columns columns)
-        {
-            _context.columns.Add(columns);
-            await _context.SaveChangesAsync();
+       
 
-            return CreatedAtAction("Getcolumns", new { id = columns.id }, columns);
-        }
-
-        // DELETE: api/columns/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<columns>> Deletecolumns(long id)
-        {
-            var columns = await _context.columns.FindAsync(id);
-            if (columns == null)
-            {
-                return NotFound();
-            }
-
-            _context.columns.Remove(columns);
-            await _context.SaveChangesAsync();
-
-            return columns;
-        }
-
-        private bool columnsExists(long id)
-        {
-            return _context.columns.Any(e => e.id == id);
-        }
     }
 }
