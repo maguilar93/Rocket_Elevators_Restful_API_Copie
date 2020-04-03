@@ -47,7 +47,7 @@ namespace TodoApi.Controllers
 
             foreach (var e in list) {
 
-                if (e.status != "active") {
+                if (e.status != "active"  ) {
                     list_alarm_inac.Add (e);
                 }
             }

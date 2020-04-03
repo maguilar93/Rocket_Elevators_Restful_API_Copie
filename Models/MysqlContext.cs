@@ -70,7 +70,6 @@ namespace TodoApi.Models
                 // entity.Property (e => e.Notes)
                 //     .HasColumnName ("notes")
                 //     .HasColumnType ("text");
-
                 // entity.Property (e => e.OperationsCertificate)
                 //     .HasColumnName ("operations_certificate")
                 //     .HasColumnType ("varchar(255)");
@@ -88,7 +87,7 @@ namespace TodoApi.Models
                     .HasForeignKey (d => d.building_id)
                     .HasConstraintName ("fk_rails_fc40470545");
 
-                // entity.HasOne (d => d.employee)
+                // entity.HasOne (d => d.employee)SSS
                 //     .WithMany (p => p.batteries)
                 //     .HasForeignKey (d => d.employee_id)
                 //     .HasConstraintName ("fk_rails_ceeeaf55f7");
@@ -311,6 +310,126 @@ namespace TodoApi.Models
                     .HasForeignKey (d => d.column_id)
                     .HasConstraintName ("fk_rails_69442d7bc2");
             });
+
+
+            modelBuilder.Entity<customers> (entity => {
+                entity.ToTable ("customers");
+ 
+                    entity.Property (e => e.id)
+                    .HasColumnName ("id")
+                    .HasColumnType ("bigint(20)");
+
+                 
+
+                   
+
+                    entity.Property (e => e.company_desc)
+                    .HasColumnName ("business_description")
+                    .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.BusinessName)
+                //     .HasColumnName ("business_name")
+                //     .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.ContactEmail)
+                //     .HasColumnName ("contact_email")
+                //     .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.ContactFullName)
+                //     .HasColumnName ("contact_full_name")
+                //     .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.ContactPhone)
+                //     .HasColumnName ("contact_phone")
+                //     .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.CreatedAt)
+                //     .HasColumnName ("created_at")
+                //     .HasColumnType ("datetime");
+
+
+
+                entity.Property (e => e.tech_manager_email)
+                    .HasColumnName ("technician_email")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.full_name_STA)
+                    .HasColumnName ("technician_full_name")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.tech_authority_phone )
+                    .HasColumnName ("technician_phone")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.updated_at)
+                    .HasColumnName ("updated_at")
+                    .HasColumnType ("datetime");
+
+                 });
+
+
+            modelBuilder.Entity<leads> (entity => {
+                entity.ToTable ("leads");
+
+                 entity.Property (e => e.Id)
+                    .HasColumnName ("id")
+                    .HasColumnType ("bigint(20)");
+
+                    entity.Property (e => e.customer_id)
+                    .HasColumnName ("customer_id")
+                    .HasColumnType ("bigint(20)");
+
+                entity.Property (e => e.Company_name)
+                    .HasColumnName ("company_name")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.Created_at)
+                    .HasColumnName ("created_at")
+                    .HasColumnType ("datetime");
+
+                entity.Property (e => e.Department)
+                    .HasColumnName ("department")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.Email)
+                    .HasColumnName ("email")
+                    .HasColumnType ("varchar(255)");
+
+             
+
+                entity.Property (e => e.Full_name)
+                    .HasColumnName ("full_name")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.Message)
+                    .HasColumnName ("message")
+                    .HasColumnType ("text");
+
+                // entity.Property (e => e.OriginalFileName)
+                //     .HasColumnName ("original_file_name")
+                //     .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.Phone)
+                    .HasColumnName ("phone")
+                    .HasColumnType ("varchar(255)");
+
+                // entity.Property (e => e.project_desc)
+                //     .HasColumnName ("project_description")
+                //     .HasColumnType ("text");
+
+                entity.Property (e => e.project_name)
+                    .HasColumnName ("project_name")
+                    .HasColumnType ("varchar(255)");
+
+                entity.Property (e => e.Updated_at)
+                    .HasColumnName ("updated_at")
+                    .HasColumnType ("datetime");
+
+
+ 
+                    
+
+                 });
     }
 
 
