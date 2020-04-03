@@ -20,7 +20,7 @@ namespace TodoApi.Models
         public DbSet<customers> customers { get; set; }
         public virtual DbSet<elevators> elevators { get; set; }
         public DbSet<employees> employees { get; set; }
-        public virtual DbSet<leads> leads { get; set; }
+        public  DbSet<leads> leads { get; set; }
         public virtual DbSet<batteries> batteries { get; set; }
         public virtual DbSet<quotes> quotes { get; set; }
         public virtual DbSet<users> users { get; set; }
@@ -324,16 +324,16 @@ namespace TodoApi.Models
                    
 
                     entity.Property (e => e.company_desc)
-                    .HasColumnName ("business_description")
+                    .HasColumnName ("company_desc")
                     .HasColumnType ("varchar(255)");
 
                 // entity.Property (e => e.BusinessName)
                 //     .HasColumnName ("business_name")
                 //     .HasColumnType ("varchar(255)");
 
-                // entity.Property (e => e.ContactEmail)
-                //     .HasColumnName ("contact_email")
-                //     .HasColumnType ("varchar(255)");
+                entity.Property (e => e.contact_email)
+                    .HasColumnName ("contact_email")
+                    .HasColumnType ("varchar(255)");
 
                 // entity.Property (e => e.ContactFullName)
                 //     .HasColumnName ("contact_full_name")
@@ -350,15 +350,15 @@ namespace TodoApi.Models
 
 
                 entity.Property (e => e.tech_manager_email)
-                    .HasColumnName ("technician_email")
+                    .HasColumnName ("tech_manager_email")
                     .HasColumnType ("varchar(255)");
 
                 entity.Property (e => e.full_name_STA)
-                    .HasColumnName ("technician_full_name")
+                    .HasColumnName ("full_name_STA")
                     .HasColumnType ("varchar(255)");
 
                 entity.Property (e => e.tech_authority_phone )
-                    .HasColumnName ("technician_phone")
+                    .HasColumnName ("tech_authority_phone")
                     .HasColumnType ("varchar(255)");
 
                 entity.Property (e => e.updated_at)
@@ -375,9 +375,7 @@ namespace TodoApi.Models
                     .HasColumnName ("id")
                     .HasColumnType ("bigint(20)");
 
-                    entity.Property (e => e.customer_id)
-                    .HasColumnName ("customer_id")
-                    .HasColumnType ("bigint(20)");
+                   
 
                 entity.Property (e => e.Company_name)
                     .HasColumnName ("company_name")

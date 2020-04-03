@@ -21,24 +21,47 @@ namespace TodoApi.Controllers {
         [HttpGet]
         public ActionResult<List<leads>> GetAll () {
             var listl = _context.leads;
+            var listc = _context.customers;
+
 
             if (listl == null) {
                 return NotFound ("Not Found");
             }
-
+            var verification = false;
             List<leads> list_lead = new List<leads> ();
+            List<customers> list_customer = new List<customers>();
+
+
+            foreach (var customer in listc) {
+                 list_customer.Add (customer);
+                   
+
+                 }
+
             DateTime currentDate = DateTime.Now.AddDays (-30);
             foreach (var lead in listl) {
-                if (lead.Created_at >= currentDate) {
-                    if(lead.customer_id == null){
+                 foreach (var customer in list_customer) {
+                    if(lead.Email == customer.contact_email){
+                      if (lead.Created_at >= currentDate) {
+                   
+                   
 
-                         list_lead.Add (lead);
-                    }
+                           list_lead.Add (lead);
+                           return list_lead;
+
                        
                     
+                       }
+
+                     }
+
                 }
+
+
+                
             }
             return list_lead;
+            
         }
 
     //     [HttpGet("LatestLeads")]
