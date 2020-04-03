@@ -25,7 +25,9 @@ namespace TodoApi
                 services.AddDbContext<MysqlContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
-                services.AddMvc();
+               
+                services.AddControllers().AddNewtonsoftJson(options =>
+                   options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

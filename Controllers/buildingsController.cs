@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
-
+using Newtonsoft.Json.Linq;
 namespace TodoApi.Controllers
 {
     [Route("api/buildings")]
     [ApiController]
-    public class buildingsController : ControllerBase
-    {
+    public class buildingsController : ControllerBase{
         private readonly MysqlContext _context;
 
         public buildingsController(MysqlContext context)
@@ -20,90 +19,48 @@ namespace TodoApi.Controllers
             _context = context;
         }
 
-        // GET: api/buildings
+        // GET api/buildings
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<buildings>>> Getbuildings()
-        {
-            return await _context.buildings.ToListAsync();
-        }
+        public ActionResult<List<buildings>> GetAll () {
+            var list = _context.buildings
+                .Include (bu => bu.batteries)
+                .ThenInclude (b => b.columns)
+                .ThenInclude (c => c.elevators);
 
-        // GET: api/buildings/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<buildings>> Getbuildings(long id)
-        {
-            var buildings = await _context.buildings.FindAsync(id);
-
-            if (buildings == null)
-            {
-                return NotFound();
+            if (list == null) {
+                return NotFound ("Not Found");
             }
 
-            return buildings;
-        }
+            // To build a "buildings" list
+            List<buildings> list_buildings_intervention = new List<buildings> ();
+            var verification = false;
 
-        // PUT: api/buildings/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putbuildings(long id, buildings buildings)
-        {
-            if (id != buildings.id)
-            {
-                return BadRequest();
-            }
+            foreach (var building in list) {
+                verification = false;
+                foreach (var battery in building.batteries) {
+                    if (battery.status == "Intervention") {
+                        verification = true;
+                    }
+                    foreach (var column in battery.columns) {
+                        if (column.status == "Intervention") {
+                            verification = true;
+                        }
 
-            _context.Entry(buildings).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!buildingsExists(id))
-                {
-                    return NotFound();
+                        foreach (var elevator in column.elevators) {
+                            if (elevator.status == "Intervention") {
+                                verification = true;
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                    throw;
+                if (verification == true) {
+                    var found_building = _context.buildings.Find (building.id);
+                    list_buildings_intervention.Add (found_building);
                 }
             }
-
-            return NoContent();
+            return list_buildings_intervention;
         }
 
-        // POST: api/buildings
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<buildings>> Postbuildings(buildings buildings)
-        {
-            _context.buildings.Add(buildings);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("Getbuildings", new { id = buildings.id }, buildings);
-        }
-
-        // DELETE: api/buildings/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<buildings>> Deletebuildings(long id)
-        {
-            var buildings = await _context.buildings.FindAsync(id);
-            if (buildings == null)
-            {
-                return NotFound();
-            }
-
-            _context.buildings.Remove(buildings);
-            await _context.SaveChangesAsync();
-
-            return buildings;
-        }
-
-        private bool buildingsExists(long id)
-        {
-            return _context.buildings.Any(e => e.id == id);
-        }
+      
     }
 }
