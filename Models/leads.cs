@@ -6,7 +6,7 @@ namespace TodoApi.Models {
      public partial class leads {
 
         public long Id { get; set; }
-        public long? customer_id { get; set; }
+        
         public string Full_name { get; set; }
         public string Company_name { get; set; }
          public string Email { get; set; }
