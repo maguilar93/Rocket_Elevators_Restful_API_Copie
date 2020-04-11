@@ -24,5 +24,6 @@ namespace TodoApi.Models
         public virtual DbSet<batteries> batteries { get; set; }
         public virtual DbSet<quotes> quotes { get; set; }
         public virtual DbSet<users> users { get; set; }
+        public virtual DbSet<Interventions> Interventions { get; set; }
     }
 }

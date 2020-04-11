@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t/XLt+5I2/itXZ4zyazDj3h6DKGxz1jNFegU6kO4+EUX+6qf1MaGQEOmCH0L/tAjgjpeh2MdvdbURKlmDuPuBw==",
+  "dgSpecHash": "1K3hHDzCkVI5YsfBAD2L7dbDsRCap+MTfW7Y9aI1m/1ziXkd/uey8GZQ+8TE9JIfPgpG98+SLa4RkeIP9dbIyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thrif\\source\\repos\\Rocket_Elevators_Restful_API_Copie\\TodoApi.csproj",
+  "projectFilePath": "C:\\Users\\thrif\\Documents\\github\\Rocket_Elevators_Restful_Api_Foundation\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thrif\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\thrif\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
